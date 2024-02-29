@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background: linear-gradient(to bottom, #6d788a, #454d59); 
+      color: #fff;
+      padding: 8px 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 20px;
+      position: relative; 
+    }
+
+    nav a {
+      color: #454d59;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 3px; 
+      transition: background-color 0.3s ease; 
+      background: linear-gradient(to bottom, #e6e7e6, #aeaeae);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1); /* Bevel effect and drop shadow */
+      height: 28px; 
+      line-height: 28px;
+      font-family: Helvetica, sans-serif; 
+      font-size: 14px; 
+    }
+
+    nav a:hover {
+      background: linear-gradient(to bottom, #f7a190, #bf584b); 
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 150px; 
+      z-index: 1;
+      top: 100%; 
+      left: 0;
+      border-radius: 0 0 5px 5px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      background-color: #5a4c48; /* Darker color for dropdown on hover */
+    }
+
+    .dropdown-content a {
+      color: #454d59;
+      text-decoration: none;
+      padding: 8px 14px; 
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #555; 
+    }
+
+    .sub-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #555;
+      min-width: 120px;
+      z-index: 1;
+      top: 0; 
+      left: 100%;
+      font-size: 10px;
+    }
+
+    .sub-dropdown:hover .sub-dropdown-content {
+      display: block;
+      background-color: #454d59; /* Darker color for sub-dropdown on hover */
+    }
+
+    .sub-dropdown-content a {
+      font-size: 10px;
+    }
+
+    .product-link {
+      color: #454d59; /* Color for product links */
+      text-decoration: none;
+    }
+
+    .product-link:hover {
+      color: #fff; /* Color for product links on hover */
+    }
+
+    .arrow-button:after {
+      content: "\25BE"; 
+      margin-left: 5px;
+    }
+
+    nav a:hover {
+      color: #fff; 
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="arrow-button">Products</a>
+        <div class="dropdown-content">
+          <div class="sub-dropdown">
+            <a href="#" class="product-link">Product 1</a>
+            <div class="sub-dropdown-content">
+              <a href="#">Sub Product 1</a>
+              <a href="#">Sub Product 2</a>
+            </div>
+          </div>
+          <a href="#" class="product-link">Product 2</a>
+        </div>
+      </li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
